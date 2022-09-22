@@ -41,5 +41,5 @@ def execution():
 
 if __name__ == "__main__":
     execution()
-    app.mainloop()
+    app.start()
 

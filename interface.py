@@ -31,7 +31,7 @@ class App(Tk):
         pos_freq = config.NOTES_FREQS[id_note+1]
         target_freq = config.NOTES_FREQS[id_note]
         # Initialize needle and text
-        self.cnvs.itemconfig(self.needle, start=0, extent=0, width=3)
+        #self.cnvs.itemconfig(self.needle, start=0, extent=0, width=3)
         self.cnvs.itemconfig(self.action_txt, text="")
         # Update notes labels
         self.cnvs.itemconfig(self.freq_txt ,text=str(round(max_freq,1)) + " Hz")
@@ -43,7 +43,8 @@ class App(Tk):
         start_freq = target_freq - max_dist
         end_freq = target_freq + max_dist
         needle_start = 180 * (end_freq - max_freq)/(end_freq - start_freq)
-        self.cnvs.itemconfig(self.needle, start=needle_start, extent=0, width=3)
+        self.cnvs.itemconfig(self.needle, start=needle_start, extent=0, width=3,
+                            fill='black', outline='black')
         
     def UpdateRed(self, action, xcoord):
         """ Updates when actual note is not target note """
@@ -56,10 +57,6 @@ class App(Tk):
         """ Updates when actual note is target note """
         self.cnvs.itemconfig(self.needle, fill="green", outline='green')
         self.cnvs.itemconfig(self.mid_txt, fill="green")
-
-    def on_closing(self):
-        global running
-        running = False
 
 if __name__ == "__main__":
     app = App()
