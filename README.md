@@ -1,2 +1,4 @@
 # Guitar-Tuner
-A simple python tkinter guitar tuner.
+A simple Python guitar tuner with tkinter.
+
+<img src="prev.png" alt="drawing" width="400"/>
